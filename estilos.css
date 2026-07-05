@@ -1,0 +1,1196 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--verde:#2E7D32;
+--verde2:#43A047;
+--verde3:#66BB6A;
+--claro:#F1F8E9;
+--blanco:#ffffff;
+--gris:#555;
+--naranja:#ff9800;
+
+}
+
+body{
+
+background:linear-gradient(180deg,#f8fff8,#edf9ee,#f7fff7);
+
+overflow-x:hidden;
+
+}
+
+/*---------------- NAVBAR ----------------*/
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:999;
+
+background:rgba(255,255,255,.25);
+
+backdrop-filter:blur(18px);
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.5s;
+
+}
+
+.logo{
+
+font-size:30px;
+
+color:var(--verde);
+
+font-weight:800;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.logo i{
+
+color:#66bb6a;
+
+animation:girar 5s linear infinite;
+
+}
+
+@keyframes girar{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:#333;
+
+font-weight:600;
+
+position:relative;
+
+transition:.4s;
+
+}
+
+nav ul li a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+width:0;
+
+height:3px;
+
+background:linear-gradient(to right,#43A047,#8BC34A);
+
+transition:.4s;
+
+border-radius:50px;
+
+}
+
+nav ul li a:hover{
+
+color:var(--verde);
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+/*------------- HAMBURGUESA ------------*/
+
+#menu{
+
+display:none;
+
+}
+
+.menu-icon{
+
+display:none;
+
+font-size:30px;
+
+cursor:pointer;
+
+color:var(--verde);
+
+}
+
+/*-------------- HERO ----------------*/
+
+header{
+
+height:100vh;
+
+background:
+
+linear-gradient(rgba(20,90,30,.55),rgba(20,90,30,.55)),
+
+url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1600");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+header::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#8BC34A;
+
+filter:blur(180px);
+
+opacity:.25;
+
+left:-100px;
+
+top:-100px;
+
+animation:mover1 8s infinite alternate;
+
+}
+
+header::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#4CAF50;
+
+filter:blur(180px);
+
+opacity:.25;
+
+right:-150px;
+
+bottom:-150px;
+
+animation:mover2 8s infinite alternate;
+
+}
+
+@keyframes mover1{
+
+100%{
+
+transform:translate(120px,90px);
+
+}
+
+}
+
+@keyframes mover2{
+
+100%{
+
+transform:translate(-120px,-70px);
+
+}
+
+}
+
+.hero{
+
+text-align:center;
+
+color:white;
+
+z-index:2;
+
+padding:20px;
+
+animation:aparece 1.5s;
+
+}
+
+.hero h1{
+
+font-size:68px;
+
+max-width:900px;
+
+margin:auto;
+
+font-weight:800;
+
+text-shadow:0 8px 25px rgba(0,0,0,.3);
+
+animation:flotar 4s infinite ease-in-out;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-top:25px;
+
+max-width:700px;
+
+margin-inline:auto;
+
+line-height:35px;
+
+}
+
+@keyframes flotar{
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.botones{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 45px;
+
+background:linear-gradient(45deg,#43A047,#8BC34A);
+
+border-radius:50px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.5s;
+
+box-shadow:0 15px 30px rgba(76,175,80,.4);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:220%;
+
+background:rgba(255,255,255,.35);
+
+left:-150px;
+
+top:-50px;
+
+transform:rotate(30deg);
+
+transition:.8s;
+
+}
+
+.btn:hover::before{
+
+left:220px;
+
+}
+
+.btn:hover{
+
+transform:translateY(-8px);
+
+}
+
+.btn2{
+
+padding:18px 45px;
+
+border:2px solid white;
+
+border-radius:50px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.btn2:hover{
+
+background:white;
+
+color:var(--verde);
+
+}
+#productos{
+    padding:100px 8%;
+}
+
+#productos h2,
+#beneficios h2,
+#nosotros h2{
+    text-align:center;
+    font-size:42px;
+    color:var(--verde);
+    margin-bottom:60px;
+    position:relative;
+}
+
+#productos h2::after,
+#beneficios h2::after,
+#nosotros h2::after{
+    content:"";
+    width:120px;
+    height:5px;
+    background:linear-gradient(to right,#43A047,#8BC34A);
+    display:block;
+    margin:15px auto;
+    border-radius:50px;
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+transition:.5s;
+
+position:relative;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(transparent,rgba(76,175,80,.12));
+
+opacity:0;
+
+transition:.5s;
+
+}
+
+.card:hover::before{
+
+opacity:1;
+
+}
+
+.card:hover{
+
+transform:translateY(-18px) rotateX(6deg);
+
+box-shadow:0 35px 60px rgba(0,0,0,.18);
+
+}
+
+.card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+transition:.7s;
+
+}
+
+.card:hover img{
+
+transform:scale(1.12);
+
+}
+
+.info{
+
+padding:25px;
+
+}
+
+.info h3{
+
+font-size:25px;
+
+color:var(--verde);
+
+margin-bottom:10px;
+
+}
+
+.info p{
+
+color:#666;
+
+line-height:28px;
+
+}
+
+.info h4{
+
+margin:18px 0;
+
+font-size:28px;
+
+color:#ff9800;
+
+}
+
+.info button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:linear-gradient(45deg,#2E7D32,#66BB6A);
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.info button:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 15px 30px rgba(67,160,71,.35);
+
+}
+
+/*==========================
+ BENEFICIOS
+==========================*/
+
+#beneficios{
+
+background:#eef8ef;
+
+padding:100px 8%;
+
+}
+
+.beneficios{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+}
+
+.beneficios div{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.5s;
+
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.beneficios div:hover{
+
+transform:translateY(-12px);
+
+}
+
+.beneficios i{
+
+font-size:55px;
+
+color:#4CAF50;
+
+margin-bottom:20px;
+
+animation:latir 2s infinite;
+
+}
+
+@keyframes latir{
+
+50%{
+
+transform:scale(1.18);
+
+}
+
+}
+
+.beneficios h3{
+
+margin-bottom:10px;
+
+color:var(--verde);
+
+}
+
+/*==========================
+NOSOTROS
+==========================*/
+
+#nosotros{
+
+padding:110px 12%;
+
+text-align:center;
+
+background:linear-gradient(135deg,#F1F8E9,#ffffff);
+
+}
+
+#nosotros p{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:38px;
+
+color:#555;
+
+}
+
+/*==========================
+FOOTER
+==========================*/
+
+footer{
+
+background:#1B5E20;
+
+padding:70px 20px;
+
+text-align:center;
+
+color:white;
+
+}
+
+footer h2{
+
+color:white;
+
+margin-bottom:30px;
+
+}
+
+footer p{
+
+margin:18px;
+
+font-size:18px;
+
+}
+
+footer i{
+
+color:#9CCC65;
+
+margin-right:10px;
+
+}
+
+/*==========================
+WHATSAPP
+==========================*/
+
+.whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:68px;
+
+height:68px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:36px;
+
+color:white;
+
+text-decoration:none;
+
+box-shadow:0 15px 35px rgba(0,0,0,.3);
+
+animation:onda 2s infinite;
+
+z-index:999;
+
+}
+
+@keyframes onda{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(37,211,102,.7);
+
+}
+
+70%{
+
+box-shadow:0 0 0 20px rgba(37,211,102,0);
+
+}
+
+100%{
+
+box-shadow:0 0 0 0 rgba(37,211,102,0);
+
+}
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.15);
+
+}
+
+/*==========================
+APARICIÓN
+==========================*/
+
+@keyframes aparece{
+
+from{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.card,
+.beneficios div{
+
+animation:aparece 1s;
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+.menu-icon{
+
+display:block;
+
+}
+
+nav ul{
+
+position:absolute;
+
+top:90px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+flex-direction:column;
+
+text-align:center;
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.5s;
+
+box-shadow:0 15px 30px rgba(0,0,0,.1);
+
+}
+
+nav ul li{
+
+padding:18px;
+
+}
+
+#menu:checked ~ ul{
+
+max-height:450px;
+
+}
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+line-height:30px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.btn,.btn2{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/*==========================
+    ANIMACIONES EXTRA
+==========================*/
+
+/* Fondo con movimiento */
+body{
+    background: linear-gradient(-45deg,#f6fff7,#edf9ee,#ffffff,#eef8ef);
+    background-size:400% 400%;
+    animation:fondoAnimado 15s ease infinite;
+}
+
+@keyframes fondoAnimado{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Tarjetas flotando */
+.card{
+    animation:flotarCard 5s ease-in-out infinite;
+}
+
+.card:nth-child(2){
+    animation-delay:.5s;
+}
+
+.card:nth-child(3){
+    animation-delay:1s;
+}
+
+.card:nth-child(4){
+    animation-delay:1.5s;
+}
+
+.card:nth-child(5){
+    animation-delay:2s;
+}
+
+.card:nth-child(6){
+    animation-delay:2.5s;
+}
+
+@keyframes flotarCard{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/* Brillo al pasar el mouse */
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-120%;
+
+width:250%;
+
+height:250%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+
+transform:rotate(20deg);
+
+transition:.8s;
+
+}
+
+.card:hover::after{
+
+left:100%;
+
+}
+
+/* Zoom elegante */
+
+.card img{
+
+filter:brightness(.95);
+
+}
+
+.card:hover img{
+
+filter:brightness(1.08);
+
+}
+
+/* Botón comprar */
+
+.info button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.info button::before{
+
+content:"";
+
+position:absolute;
+
+width:40px;
+
+height:220%;
+
+background:rgba(255,255,255,.4);
+
+left:-60px;
+
+top:-40px;
+
+transform:rotate(25deg);
+
+transition:.8s;
+
+}
+
+.info button:hover::before{
+
+left:120%;
+
+}
+
+/* Logo respirando */
+
+.logo{
+
+animation:respirar 3s infinite;
+
+}
+
+@keyframes respirar{
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* Beneficios */
+
+.beneficios div:hover{
+
+transform:translateY(-15px) scale(1.05);
+
+}
+
+/* Footer */
+
+footer{
+
+background-size:300% 300%;
+
+background-image:linear-gradient(
+45deg,
+#1B5E20,
+#2E7D32,
+#388E3C,
+#43A047
+);
+
+animation:footerAnimado 8s infinite;
+
+}
+
+@keyframes footerAnimado{
+
+0%{
+
+background-position:0%;
+
+}
+
+50%{
+
+background-position:100%;
+
+}
+
+100%{
+
+background-position:0%;
+
+}
+
+}
+
+/* WhatsApp girando */
+
+.whatsapp:hover{
+
+transform:scale(1.2) rotate(360deg);
+
+transition:.8s;
+
+}
+
+/* Títulos */
+
+h2{
+
+animation:entradaTitulo 1s;
+
+}
+
+@keyframes entradaTitulo{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Scroll personalizado */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#eef8ef;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#43A047;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#2E7D32;
+
+}
